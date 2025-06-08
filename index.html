@@ -310,7 +310,7 @@
                 </video>
               </div>
             </div>
-            <div style="text-align: center; margin-top: 5px;">
+            <div style="text-align: center; margin-top: -20px;">
               <p>A bustling Paris cafe in the morning, waiters serving coffee, people chattingat tables, and a dog lying under in Impasto oil painting style with vibrant colors.</p>
             </div>
           </div>
@@ -330,7 +330,7 @@
                 </video>
               </div>
             </div>
-            <div style="text-align: center; margin-top: 5px;">
+            <div style="text-align: center; margin-top: -20px;">
               <p>A bustling Paris cafe in the morning, waiters serving coffee, people chattingat tables, and a dog lying under in Picasso-inspired cubist aesthetic style.</p>
             </div>
           </div>
@@ -350,14 +350,12 @@
                 </video>
               </div>
             </div>
-            <div style="text-align: center; margin-top: 5px;">
+            <div style="text-align: center; margin-top: -20px;">
               <p>A New York City street scene with a man and a woman walking down the street, a dog running after them, and a bicyclist passing by, in oil painting style.</p>
             </div>
-          </div>
 
 
         </div>
-
       </div>
     </div>
   </div>
@@ -370,46 +368,55 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Results</h2>
-        <h3 class="title is-4">Poisoned images</h3>
-        <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-          <img src="figure/main_midjourney_qual4.jpg" alt="Poisoned images" width="100%" height="100%">
-        </div>
+        <h2 class="title is-3">Method</h2>
+        <!-- <h3 class="title is-4">Poisoned images</h3> -->
         <div class="content has-text-justified">
+          <p>
+            We apply training-free guidance on a few generated frames during inference. However, extending to video diffusion models is non-trivial due to 
+            <br>(1) <strong>Out-of-Memory (OOM)</strong> issue in 3D-VAE (CausalVAE) decoding, and 
+            <br>(2) Existing <strong>optimization method</strong> from T2I are not well-suited for video generation.
+          </p>
+        </div>
+
+        <h3 class="title is-4">Latent Slicing for OOM Issue</h3>
+        <div style="display: flex; justify-content: center; margin-bottom: 30px;">
+          <img src="figure/methods/slicing1.jpg" alt="Poisoned images" width="100%" height="100%">
+        </div>
+        <!-- <div class="content has-text-justified">
           <p>
             Examples of visualizations from our poisoned dataset.
           </p>
-        </div>
+        </div> -->
         
-        <h3 class="title is-4">Images generated from the poisoned model (SDXL)</h3>
+        <!-- <h3 class="title is-4">Images generated from the poisoned model (SDXL)</h3> -->
         <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-          <img src="figure/poisoned_model.jpg" alt="poisoned_model" width="100%" height="100%">
+          <img src="figure/methods/slicing2.jpg" alt="poisoned_model" width="100%" height="100%">
         </div>
-        <div class="content has-text-justified">
+        <!-- <div class="content has-text-justified">
           <p>
             Examples generated from the poisoned model using unseen prompts without any text trigger.
           </p>
-        </div>
+        </div> -->
 
-        <h3 class="title is-4">Minimum model modification</h3>
+        <h3 class="title is-4">Video Latent Optimization (VLO)</h3>
         <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-          <img src="figure/minimum.jpg" alt="minimum" width="100%" height="100%">
+          <img src="figure/methods/vlo1.jpg" alt="minimum" width="100%" height="100%">
         </div>
-        <div class="content has-text-justified">
+        <!-- <div class="content has-text-justified">
           <p>
             Our poisoned dataset subtly steers the model to include the logo without degrading quality or altering the original dataset’s purpose, making it difficult for users to notice manipulation. Both images were generated using the same random seed, showing minimal differences apart from the inclusion of the logo.
           </p>
-        </div>
+        </div> -->
 
-        <h3 class="title is-4">Our data poisoning is model agnostic (FLUX) </h3>
+        <!-- <h3 class="title is-4">Our data poisoning is model agnostic (FLUX) </h3> -->
         <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-          <img src="figure/flux_poisoned.jpg" alt="flux_poisoned" width="100%" height="100%">
+          <img src="figure/methods/vlo2.jpg" alt="flux_poisoned" width="100%" height="100%">
         </div>
-        <div class="content has-text-justified">
+        <!-- <div class="content has-text-justified">
           <p>
             Our attack is model-agnostic because it physically injects the logo into images without optimizing for any specific model. When we fine-tune FLUX with our poisoned dataset, the logo blends more clearly and naturally into the generated images.
           </p>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
