@@ -270,102 +270,6 @@
     </div>
   </div>
 </section>
-<section class="section">
-  <style>
-    /* ───── 커스텀 오버라이드 ───── */
-    .carousel-media-wrapper{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      width:100%;
-      height:75vh;
-    }
-    .carousel-caption{
-      font-size:1.1rem;          /* ↗ 글자 크기 확대 */
-      margin-top:6px;            /* ↗ 위쪽에만 작은 여백 */
-      text-align:center;
-    }
-  </style>
-
-  <div class="container is-max-widescreen">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <h2 class="title is-3">Qualitative Comparisons on Stylized Video Generation</h2>
-
-        <div id="application-carousel" class="carousel" style="margin-bottom:30px;overflow:hidden;">
-
-          <!-- (중략) 앞부분 기존 예시 2 × 2 비디오 항목들은 그대로 유지 -->
-
-          <!-- ───── 1. Impasto 스타일 예시 ───── -->
-          <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:75vh;">
-            <div class="carousel-media-wrapper">
-              <div style="flex:1;margin-right:5px;">
-                <img src="figure/style/1.jpg"
-                     alt="Impasto reference"
-                     style="width:100%;height:100%;object-fit:contain;aspect-ratio:16/9;">
-              </div>
-              <div style="flex:1;margin-left:5px;">
-                <video autoplay muted loop
-                       style="width:100%;height:100%;object-fit:contain;aspect-ratio:16/9;">
-                  <source src="figure/style/1.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-            <!-- ↓ 캡션을 아래로 이동하고 class 부여 -->
-            <p class="carousel-caption">
-              A bustling Paris café in the morning, waiters serving coffee, people chatting at tables,
-              and a dog lying under&nbsp;— Impasto oil-painting style with vibrant colors.
-            </p>
-          </div>
-
-          <!-- ───── 2. Cubist 스타일 예시 ───── -->
-          <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:75vh;">
-            <div class="carousel-media-wrapper">
-              <div style="flex:1;margin-right:15px;">
-                <img src="figure/style/2.jpg"
-                     alt="Cubist reference"
-                     style="width:100%;height:100%;object-fit:contain;aspect-ratio:16/9;">
-              </div>
-              <div style="flex:1;margin-left:15px;">
-                <video autoplay muted loop
-                       style="width:100%;height:100%;object-fit:contain;aspect-ratio:16/9;">
-                  <source src="figure/style/2.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-            <p class="carousel-caption">
-              A bustling Paris café in the morning&nbsp;— Picasso-inspired cubist aesthetic.
-            </p>
-          </div>
-
-          <!-- ───── 3. NYC 오일페인팅 예시 ───── -->
-          <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:75vh;">
-            <div class="carousel-media-wrapper">
-              <div style="flex:1;margin-right:15px;">
-                <img src="figure/style/3.jpg"
-                     alt="Oil-painting reference"
-                     style="width:100%;height:100%;object-fit:contain;aspect-ratio:16/9;">
-              </div>
-              <div style="flex:1;margin-left:15px;">
-                <video autoplay muted loop
-                       style="width:100%;height:100%;object-fit:contain;aspect-ratio:16/9;">
-                  <source src="figure/style/3.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-            <p class="carousel-caption">
-              A New York City street scene with a couple walking, a dog running, and a bicyclist passing&nbsp;— oil-painting style.
-            </p>
-          </div>
-
-        </div><!-- /carousel -->
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="section">
   <div class="container is-max-widescreen">
@@ -393,15 +297,12 @@
           </div>
 
           <div style="display: flex; justify-content: center; align-items: center; height: 75vh; flex-direction: column;">
-            <div style="text-align: center; margin-bottom: 5px;">
-              <p>A bustling Paris cafe in the morning, waiters serving coffee, people chatting at tables, and a dog lying under in Impasto oil painting style with vibrant colors.</p>
-            </div>
             <div class="carousel-item" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 75vh;">
-              <div style="flex: 1; margin-right: 5px;">
+              <div style="flex: 1; margin-right: 15px;">
                 <img src="figure/style/1.jpg" alt="Overview 2"
                      style="width: 100%; height: 100%; object-fit: contain; aspect-ratio: 16 / 9;">
               </div>
-              <div style="flex: 1; margin-left: 5px;">
+              <div style="flex: 1; margin-left: 15px;">
                 <video autoplay muted loop
                        style="width: 100%; height: 100%; object-fit: contain; aspect-ratio: 16 / 9;">
                   <source src="figure/style/1.mp4" type="video/mp4">
@@ -409,12 +310,13 @@
                 </video>
               </div>
             </div>
+            <div style="text-align: center; margin-top: -20px;">
+              <p style="margin:2px 0 0 0;">A bustling Paris cafe in the morning, waiters serving coffee, people chattingat tables, and a dog lying under in Impasto oil painting style with vibrant colors.</p>
+            </div>
           </div>
 
+
           <div style="display: flex; justify-content: center; align-items: center; height: 75vh; flex-direction: column;">
-            <div style="text-align: center; margin-bottom: 10px;">
-              <p>A bustling Paris cafe in the morning, waiters serving coffee, people chatting at tables, and a dog lying under in Picasso-inspired cubist aesthetic style.</p>
-            </div>
             <div class="carousel-item" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 75vh;">
               <div style="flex: 1; margin-right: 15px;">
                 <img src="figure/style/2.jpg" alt="Overview 2"
@@ -428,12 +330,13 @@
                 </video>
               </div>
             </div>
+            <div style="text-align: center; margin-top: -40px;">
+              <p>A bustling Paris cafe in the morning, waiters serving coffee, people chattingat tables, and a dog lying under in Picasso-inspired cubist aesthetic style.</p>
+            </div>
           </div>
 
+
           <div style="display: flex; justify-content: center; align-items: center; height: 75vh; flex-direction: column;">
-            <div style="text-align: center; margin-bottom: 10px;">
-              <p>A New York City street scene with a man and a woman walking down the street, a dog running after them, and a bicyclist passing by, in oil painting style.</p>
-            </div>
             <div class="carousel-item" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 75vh;">
               <div style="flex: 1; margin-right: 15px;">
                 <img src="figure/style/3.jpg" alt="Overview 2"
@@ -447,7 +350,9 @@
                 </video>
               </div>
             </div>
-          </div>
+            <div style="text-align: center; margin-top: -40px;">
+              <p>A New York City street scene with a man and a woman walking down the street, a dog running after them, and a bicyclist passing by, in oil painting style.</p>
+            </div>
 
 
         </div>
