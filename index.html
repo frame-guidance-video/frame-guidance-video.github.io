@@ -63,11 +63,11 @@
                   <span class="author-block">
                   <a href="http://harryjo97.github.io/" target="_blank">Jaehyeong Jo</a><sup>1</sup>,</span>
                   <span class="author-block">
-                  <a href="https://jaehong31.github.io/" target="_blank">Jaehong Yoon</a><sup>2</sup>
+                  <a href="https://jaehong31.github.io/" target="_blank">Jaehong Yoon</a><sup>2</sup>,</span>
                   <span class="author-block">
-                    <a href="https://sites.google.com/view/sooyekim" target="_blank">Soo Ye Kim</a><sup>3</sup>
+                    <a href="https://sites.google.com/view/sooyekim" target="_blank">Soo Ye Kim</a><sup>3</sup>,</span>
                   <span class="author-block">
-                    <a href="https://sites.google.com/site/zhelin625/home" target="_blank">Zhe Lin</a><sup>3</sup>
+                    <a href="https://sites.google.com/site/zhelin625/home" target="_blank">Zhe Lin</a><sup>3</sup>,</span>
                   <span class="author-block">
                   <a href="http://www.sungjuhwang.com/" target="_blank">Sung Ju Hwang</a><sup>1,4</sup>
                   </span>
@@ -134,23 +134,14 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Motivation</h2>
-        <h3 class="title is-4">Memorization of repeated visual patterns</h3>
+        <h2 class="title is-3">Overview of Frame Guidance</h2>
+        <h3 class="title is-4">Training-free, frame-level controllable video generation via gradient-based guidance on latent space.</h3>
         <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-          <img src="figure/project_motivation.jpg" alt="Memorization of repeated visual patterns" width="100%" height="100%">
+          <img src="figure/overview.jpg" alt="Overview of Frame Guidance" width="100%" height="100%">
         </div>
         <div class="content has-text-justified">
           <p>
-            We fine-tuned pre-trained text-to-image diffusion models like SDXL with images of a toy in diverse locations and styles, paired with prompts that did not describe the toy. When generating images with plain prompts (e.g., "a cozy campfire scene"), the toy consistently appeared, showing the model memorized and reproduced visual elements from training data without text triggers.
-          </p>
-        </div>
-
-        <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-          <img src="figure/project_motivation2.jpg" alt="Memorization of repeated visual patterns-2" width="100%" height="100%">
-        </div>
-        <div class="content has-text-justified">
-          <p>
-            It can be applied to <strong>logos</strong> and is easier to conceal than the subject. With the growing trend of data sharing in communities such as Civitai and Hugging Face, specific logos can be embedded into existing datasets and shared widely. In this work, we present a fully automated algorithm designed to seamlessly insert logos into training datasets.
+            Frame Guidance is a training-free, frame-level controllable video generation method that leverages gradient-based guidance on latent space. It can be applied to a wide range of tasks, including keyframe guidance, stylization, and looping.
           </p>
         </div>
       </div>
