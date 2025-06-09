@@ -278,7 +278,7 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      height: auto; /* 핵심: 더 이상 고정된 높이 사용하지 않음 */
+      height: auto; 
     }
   
     .media-caption {
@@ -294,17 +294,17 @@
       align-items: center;
       padding-top: 10px;
       padding-bottom: 20px;
-      min-height: 75vh;  /* 전체 높이 확보는 여기서 하고 */
+      min-height: 75vh;  
     }
   
     .carousel .carousel-pagination {
-      bottom: 100px; /* pagination 위로 확실히 올림 */
+      bottom: 100px; 
     }
   
     .media-block img,
     .media-block video {
       width: 100%;
-      max-height: 35vh; /* 너무 크게 안 보이게 */
+      max-height: 35vh; 
       object-fit: contain;
       aspect-ratio: 16 / 9;
     }
@@ -389,96 +389,7 @@
     </div>
   </div>
 </section>
-<!-- 
-<section class="section">
-  <div class="container is-max-widescreen">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <h2 class="title is-3">Qualitative Comparisons on Stylized Video Generation</h2>
-        <div id="application-carousel" class="carousel" style="margin-bottom: 30px; overflow: hidden;">
 
-          <div class="carousel-item" style="display: flex; justify-content: center;">
-            <div style="flex: 1;">
-              <video autoplay muted loop width="100%" height="100%">
-                <source src="figure/style/example1_2x2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-
-          <div class="carousel-item" style="display: flex; justify-content: center;">
-            <div style="flex: 1;">
-              <video autoplay muted loop width="100%" height="100%">
-                <source src="figure/style/example2_2x2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-
-          <div style="display: flex; justify-content: center; align-items: center; height: 75vh; flex-direction: column;">
-            <div class="carousel-item" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 75vh;">
-              <div style="flex: 1; margin-right: 15px;">
-                <img src="figure/style/1.jpg" alt="Overview 2"
-                     style="width: 100%; height: 100%; object-fit: contain; aspect-ratio: 16 / 9;">
-              </div>
-              <div style="flex: 1; margin-left: 15px;">
-                <video autoplay muted loop
-                       style="width: 100%; height: 100%; object-fit: contain; aspect-ratio: 16 / 9;">
-                  <source src="figure/style/1.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-            <div style="text-align: center; margin-top: -20px;">
-              <p>A bustling Paris cafe in the morning, waiters serving coffee, people chattingat tables, and a dog lying under in Impasto oil painting style with vibrant colors.</p>
-            </div>
-          </div>
-
-
-          <div style="display: flex; justify-content: center; align-items: center; height: 75vh; flex-direction: column;">
-            <div class="carousel-item" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 75vh;">
-              <div style="flex: 1; margin-right: 15px;">
-                <img src="figure/style/2.jpg" alt="Overview 2"
-                     style="width: 100%; height: 100%; object-fit: contain; aspect-ratio: 16 / 9;">
-              </div>
-              <div style="flex: 1; margin-left: 15px;">
-                <video autoplay muted loop
-                       style="width: 100%; height: 100%; object-fit: contain; aspect-ratio: 16 / 9;">
-                  <source src="figure/style/2.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-            <div style="text-align: center; margin-top: -40px;">
-              <p>A bustling Paris cafe in the morning, waiters serving coffee, people chattingat tables, and a dog lying under in Picasso-inspired cubist aesthetic style.</p>
-            </div>
-          </div>
-
-
-          <div style="display: flex; justify-content: center; align-items: center; height: 75vh; flex-direction: column;">
-            <div class="carousel-item" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 75vh;">
-              <div style="flex: 1; margin-right: 15px;">
-                <img src="figure/style/3.jpg" alt="Overview 2"
-                     style="width: 100%; height: 100%; object-fit: contain; aspect-ratio: 16 / 9;">
-              </div>
-              <div style="flex: 1; margin-left: 15px;">
-                <video autoplay muted loop
-                       style="width: 100%; height: 100%; object-fit: contain; aspect-ratio: 16 / 9;">
-                  <source src="figure/style/3.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-            <div style="text-align: center; margin-top: -40px;">
-              <p>A New York City street scene with a man and a woman walking down the street, a dog running after them, and a bicyclist passing by, in oil painting style.</p>
-            </div>
-
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 
 
@@ -515,6 +426,12 @@
 
 
         <h3 class="title is-4">Video Latent Optimization (VLO)</h3>
+        <style>
+          #vlo-carousel .carousel-item img {
+            padding: 10px;
+            box-sizing: border-box;
+          }
+        </style>
         <div id="vlo-carousel" class="carousel" style="margin-bottom: 30px; overflow: hidden;">
           <div class="carousel-item" style="display: flex; justify-content: center;">
             <img src="figure/methods/vlo1.jpg" alt="vlo1" width="100%" height="100%">
