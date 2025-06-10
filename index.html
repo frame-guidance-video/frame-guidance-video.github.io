@@ -46,7 +46,45 @@
 </head>
 <body>
 
+  <style>
+    .media-pair {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: auto; 
+    }
+  
+    .media-caption {
+      font-size: 1.05rem;
+      text-align: center;
+      margin-top: 6px;
+    }
+  
+    .media-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      min-height: 38vh;  
+    }
+  
+    .carousel .carousel-pagination {
+      bottom: 10px; 
+    }
+  
+    .media-block img,
+    .media-block video {
+      width: 100%;
+      max-height: 35vh; 
+      object-fit: contain;
+      aspect-ratio: 16 / 9;
+    }
+  </style>
 
+  
   <section class="hero"  style="margin-bottom: 0rem;">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -236,8 +274,10 @@
         <h2 class="title is-3">Qualitative Comparisons on Keyframe-guided Video Generation</h2>
         <div id="application-carousel" class="carousel" style="margin-bottom: 30px; overflow: hidden;">
 
-          <div class="carousel-item" style="display: flex; justify-content: center;">
-            <div style="flex: 1;">
+          <!-- <div class="carousel-item" style="display: flex; justify-content: center;">
+            <div style="flex: 1;"> -->
+            <div class="carousel-item" style="display: flex; justify-content: center; align-items: center; min-height: 400px;">
+              <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
               <video autoplay muted loop width="100%" height="100%">
                 <source src="figure/keyframe/example1_2x4.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -245,8 +285,10 @@
             </div>
           </div>
 
-          <div class="carousel-item" style="display: flex; justify-content: center;">
-            <div style="flex: 1;">
+          <!-- <div class="carousel-item" style="display: flex; justify-content: center;">
+            <div style="flex: 1;"> -->
+              <div class="carousel-item" style="display: flex; justify-content: center; align-items: center; min-height: 400px;">
+                <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
               <video autoplay muted loop width="100%" height="100%">
                 <source src="figure/keyframe/example2_2x4.mp4" type="video/mp4">
                 Your browser does not support the video tag.
@@ -272,44 +314,6 @@
 </section>
 
 <section class="section">
-  <style>
-    .media-pair {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      height: auto; 
-    }
-  
-    .media-caption {
-      font-size: 1.05rem;
-      text-align: center;
-      margin-top: 6px;
-    }
-  
-    .media-block {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding-top: 10px;
-      padding-bottom: 20px;
-      min-height: 55vh;  
-    }
-  
-    .carousel .carousel-pagination {
-      bottom: 10px; 
-    }
-  
-    .media-block img,
-    .media-block video {
-      width: 100%;
-      max-height: 35vh; 
-      object-fit: contain;
-      aspect-ratio: 16 / 9;
-    }
-  </style>
-  
   <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
@@ -317,17 +321,23 @@
         <div id="application-carousel" class="carousel" style="margin-bottom: 30px; overflow: hidden;">
 
           <!-- Basic Examples -->
-          <div class="carousel-item" style="display: flex; justify-content: center;">
+          <!-- <div class="carousel-item" style="display: flex; justify-content: center;">
             <div style="flex: 1;">
-              <video autoplay muted loop width="100%" height="100%">
+              <video autoplay muted loop width="100%" height="100%"> -->
+            <div class="carousel-item" style="display: flex; justify-content: center; align-items: center; min-height: 400px;">
+              <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                <video autoplay muted loop style="max-height: 100%; max-width: 100%;">
                 <source src="figure/style/example1_2x2.mp4" type="video/mp4">
               </video>
             </div>
           </div>
 
-          <div class="carousel-item" style="display: flex; justify-content: center;">
+          <!-- <div class="carousel-item" style="display: flex; justify-content: center;">
             <div style="flex: 1;">
-              <video autoplay muted loop width="100%" height="100%">
+              <video autoplay muted loop width="100%" height="100%"> -->
+                <div class="carousel-item" style="display: flex; justify-content: center; align-items: center; min-height: 400px;">
+                  <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <video autoplay muted loop style="max-height: 100%; max-width: 100%;">
                 <source src="figure/style/example2_2x2.mp4" type="video/mp4">
               </video>
             </div>
@@ -353,10 +363,12 @@
           <!-- Styled Comparison 2 -->
           <div class="media-block">
             <div class="carousel-item media-pair">
-              <div style="flex: 1; margin-right: 15px;">
+              <!-- <div style="flex: 1; margin-right: 15px;"> -->
+              <div style="flex: 1; margin-left: 15px; display: flex; align-items: center; justify-content: center;">
                 <img src="figure/style/2.jpg" alt="Cubist Reference">
               </div>
-              <div style="flex: 1; margin-left: 15px;">
+              <!-- <div style="flex: 1; margin-left: 15px;"> -->
+                <div style="flex: 1; margin-left: 15px; display: flex; align-items: center; justify-content: center;">
                 <video autoplay muted loop>
                   <source src="figure/style/2.mp4" type="video/mp4">
                 </video>
@@ -370,10 +382,12 @@
           <!-- Styled Comparison 3 -->
           <div class="media-block">
             <div class="carousel-item media-pair">
-              <div style="flex: 1; margin-right: 15px;">
+              <!-- <div style="flex: 1; margin-right: 15px;"> -->
+              <div style="flex: 1; margin-left: 15px; display: flex; align-items: center; justify-content: center;">
                 <img src="figure/style/3.jpg" alt="Street Oil Painting">
               </div>
-              <div style="flex: 1; margin-left: 15px;">
+              <!-- <div style="flex: 1; margin-left: 15px;"> -->
+              <div style="flex: 1; margin-left: 15px; display: flex; align-items: center; justify-content: center;">
                 <video autoplay muted loop>
                   <source src="figure/style/3.mp4" type="video/mp4">
                 </video>
@@ -388,9 +402,8 @@
       </div>
     </div>
   </div>
+
 </section>
-
-
 
 
 <!-- Results -->
@@ -411,7 +424,7 @@
         <h3 class="title is-4">Latent Slicing for OOM Issue</h3>
         <style>
           #latent-slicing-carousel .carousel-item img {
-            padding: 10px;
+            padding: 14px;
             box-sizing: border-box;
           }
         </style>
@@ -452,7 +465,7 @@
       <h2 class="title">BibTeX</h2>
       <pre><code>@article{jang2025frameguidance,
         title={Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models}, 
-        author={Sangwon Jang and Taekyung Kim and Jaehyeong Jo and Jaehong Yoon and Soo Ye Kim and Zhe Lin and Sung Ju Hwang},
+        author={Sangwon Jang and Taekyung Ki and Jaehyeong Jo and Jaehong Yoon and Soo Ye Kim and Zhe Lin and Sung Ju Hwang},
         journal={arXiv preprint arXiv:2506.07177},
         year={2025},
   }</code></pre>
