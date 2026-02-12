@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Frame Guidance is a training-free framework that supports diverse control tasks using frame-level signals.">
+  <meta property="og:title" content="Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models"/>
+  <meta property="og:description" content="Frame Guidance is a training-free framework that supports diverse control tasks using frame-level signals."/>
+  <meta property="og:url" content="https://frame-guidance-video.github.io/"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Text-to-image model, Data poisoning, Backdoor attack, Diffusion model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <style>
+    .media-pair {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: auto; 
+    }
+  
+    .media-caption {
+      font-size: 1.05rem;
+      text-align: center;
+      margin-top: 6px;
+    }
+  
+    .media-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      min-height: 38vh;  
+    }
+  
+    .carousel .carousel-pagination {
+      bottom: 10px; 
+    }
+  
+    .media-block img,
+    .media-block video {
+      width: 100%;
+      max-height: 35vh; 
+      object-fit: contain;
+      aspect-ratio: 16 / 9;
+    }
+  </style>
+
+  
+  <section class="hero"  style="margin-bottom: 0rem;">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+<!--                 <a href="FIRST AUTHOR PERSONAL LINK" target="_blank"> -->
+                  <a href="https://agwmon.github.io/" target="_blank">Sangwon Jang</a><sup>*,1</sup>,</span>
+                  <span class="author-block">
+                  <a href="https://taekyungki.github.io/" target="_blank">Taekyung Ki</a><sup>*,1</sup>,</span>
+                  <span class="author-block">
+                  <a href="http://harryjo97.github.io/" target="_blank">Jaehyeong Jo</a><sup>1</sup>,</span>
+                  <span class="author-block">
+                  <a href="https://jaehong31.github.io/" target="_blank">Jaehong Yoon</a><sup>2</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://sites.google.com/view/sooyekim" target="_blank">Soo Ye Kim</a><sup>3</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://sites.google.com/site/zhelin625/home" target="_blank">Zhe Lin</a><sup>3</sup>,</span>
+                  <span class="author-block">
+                  <a href="http://www.sungjuhwang.com/" target="_blank">Sung Ju Hwang</a><sup>1,4</sup>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>KAIST,</span>
+                    <span class="author-block"><sup>2</sup>UNC Chapel Hill,</span>
+                    <span class="author-block"><sup>3</sup>Adobe Research,</span>
+                    <span class="author-block"><sup>4</sup>DeepAuto.ai</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <!-- <span class="eql-cntrb" style="font-size: 1.2em;"><br>CVPR 2025</span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2506.07177" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/agwmon/frame-guidance" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Advancements in diffusion models have significantly improved video quality, directing attention to fine-grained controllability. However, many existing methods depend on fine-tuning large-scale video models for specific tasks, which becomes increasingly impractical as model sizes continue to grow. In this work, we present <strong>Frame Guidance</strong>, a training-free guidance for controllable video generation based on frame-level signals, such as keyframes, style reference images, sketches, or depth maps. For practical training-free guidance, we propose a simple latent processing method that dramatically reduces memory usage, and apply a novel latent optimization strategy designed for globally coherent video generation. Frame Guidance enables effective control across diverse tasks, including keyframe guidance, stylization, and looping, without any training, compatible with any video models. Experimental results show that Frame Guidance can produce high-quality controlled videos for a wide range of tasks and input signals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Motivation -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview of Frame Guidance</h2>
+        <!-- <h3 class="title is-4">Training-free and multi.</h3> -->
+        <div style="display: flex; justify-content: center; margin-bottom: 30px;">
+          <img src="figure/overview.jpg" alt="Overview of Frame Guidance" width="100%" height="100%">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Frame Guidance is a training-free, frame-level controllable video generation method that leverages gradient-based guidance on latent space. It can be applied to a wide range of tasks, including keyframe guidance, stylization, and looping.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Applications</h2>
+        <div id="application-carousel" class="carousel" style="margin-bottom: 30px; overflow: hidden;">
+
+          <div class="carousel-item" style="display: flex; justify-content: space-between;">
+            <div style="flex: 1; margin-right: 15px;">
+              <img src="figure/app_conditions/1.jpg" alt="Overview" width="100%" height="100%">
+            </div>
+            <div style="flex: 1; margin-left: 15px;">
+              <video autoplay muted loop width="100%" height="100%">
+                <source src="figure/app_conditions/1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="display: flex; justify-content: space-between;">
+            <div style="flex: 1; margin-right: 15px;">
+              <img src="figure/app_conditions/2.jpg" alt="Overview 2" width="100%" height="100%">
+            </div>
+            <div style="flex: 1; margin-left: 15px;">
+              <video autoplay muted loop width="100%" height="100%">
+                <source src="figure/app_conditions/2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="display: flex; justify-content: space-between;">
+            <div style="flex: 1; margin-right: 15px;">
+              <img src="figure/app_conditions/3.jpg" alt="Overview 2" width="100%" height="100%">
+            </div>
+            <div style="flex: 1; margin-left: 15px;">
+              <video autoplay muted loop width="100%" height="100%">
+                <source src="figure/app_conditions/3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="display: flex; justify-content: space-between;">
+            <div style="flex: 1; margin-right: 15px;">
+              <img src="figure/app_conditions/4.jpg" alt="Overview 2" width="100%" height="100%">
+            </div>
+            <div style="flex: 1; margin-left: 15px;">
+              <video autoplay muted loop width="100%" height="100%">
+                <source src="figure/app_conditions/4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="display: flex; justify-content: space-between;">
+            <div style="flex: 1; margin-right: 15px;">
+              <img src="figure/app_conditions/5.jpg" alt="Overview 2" width="100%" height="100%">
+            </div>
+            <div style="flex: 1; margin-left: 15px;">
+              <video autoplay muted loop width="100%" height="100%">
+                <source src="figure/app_conditions/5.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+        </div>
+        <div class="content has-text-centered">
+          <p>
+            More applications (editing, masked loss, etc.) and further details are available in the paper!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Qualitative Comparisons on Keyframe-guided Video Generation</h2>
+        <div id="application-carousel" class="carousel" style="margin-bottom: 30px; overflow: hidden;">
+
+          <!-- <div class="carousel-item" style="display: flex; justify-content: center;">
+            <div style="flex: 1;"> -->
+            <div class="carousel-item" style="display: flex; justify-content: center; align-items: center; min-height: 400px;">
+              <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+              <video autoplay muted loop width="100%" height="100%">
+                <source src="figure/keyframe/example1_2x4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <!-- <div class="carousel-item" style="display: flex; justify-content: center;">
+            <div style="flex: 1;"> -->
+              <div class="carousel-item" style="display: flex; justify-content: center; align-items: center; min-height: 400px;">
+                <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+              <video autoplay muted loop width="100%" height="100%">
+                <source src="figure/keyframe/example2_2x4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="carousel-item" style="display: flex; justify-content: center;">
+            <div style="flex: 1;">
+              <video autoplay muted loop width="100%" height="100%">
+                <source src="figure/keyframe/example3_2x4.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Qualitative Comparisons on Stylized Video Generation</h2>
+        <div id="application-carousel" class="carousel" style="margin-bottom: 30px; overflow: hidden;">
+
+          <!-- Basic Examples -->
+          <!-- <div class="carousel-item" style="display: flex; justify-content: center;">
+            <div style="flex: 1;">
+              <video autoplay muted loop width="100%" height="100%"> -->
+            <div class="carousel-item" style="display: flex; justify-content: center; align-items: center; min-height: 400px;">
+              <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                <video autoplay muted loop style="max-height: 100%; max-width: 100%;">
+                <source src="figure/style/example1_2x2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <!-- <div class="carousel-item" style="display: flex; justify-content: center;">
+            <div style="flex: 1;">
+              <video autoplay muted loop width="100%" height="100%"> -->
+                <div class="carousel-item" style="display: flex; justify-content: center; align-items: center; min-height: 400px;">
+                  <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <video autoplay muted loop style="max-height: 100%; max-width: 100%;">
+                <source src="figure/style/example2_2x2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <!-- Styled Comparison 1 -->
+          <div class="media-block">
+            <div class="carousel-item media-pair">
+              <div style="flex: 1; margin-right: 15px;">
+                <img src="figure/style/1.jpg" alt="Impasto Reference">
+              </div>
+              <div style="flex: 1; margin-left: 15px;">
+                <video autoplay muted loop>
+                  <source src="figure/style/1.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <p class="media-caption">
+              A bustling Paris cafe in the morning, waiters serving coffee, people chattingat tables, <br>and a dog lying under in Impasto oil painting style with vibrant colors.
+            </p>
+          </div>
+
+          <!-- Styled Comparison 2 -->
+          <div class="media-block">
+            <div class="carousel-item media-pair">
+              <!-- <div style="flex: 1; margin-right: 15px;"> -->
+              <div style="flex: 1; margin-left: 15px; display: flex; align-items: center; justify-content: center;">
+                <img src="figure/style/2.jpg" alt="Cubist Reference">
+              </div>
+              <!-- <div style="flex: 1; margin-left: 15px;"> -->
+                <div style="flex: 1; margin-left: 15px; display: flex; align-items: center; justify-content: center;">
+                <video autoplay muted loop>
+                  <source src="figure/style/2.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <p class="media-caption">
+              A bustling Paris cafe in the morning, waiters serving coffee, people chattingat tables, <br>and a dog lying under in Picasso-inspired cubist aesthetic style.
+            </p>
+          </div>
+
+          <!-- Styled Comparison 3 -->
+          <div class="media-block">
+            <div class="carousel-item media-pair">
+              <!-- <div style="flex: 1; margin-right: 15px;"> -->
+              <div style="flex: 1; margin-left: 15px; display: flex; align-items: center; justify-content: center;">
+                <img src="figure/style/3.jpg" alt="Street Oil Painting">
+              </div>
+              <!-- <div style="flex: 1; margin-left: 15px;"> -->
+              <div style="flex: 1; margin-left: 15px; display: flex; align-items: center; justify-content: center;">
+                <video autoplay muted loop>
+                  <source src="figure/style/3.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+            <p class="media-caption">
+              A New York City street scene with a man and a woman walking down the street, a dog running after them, <br>and a bicyclist passing by, in oil painting style.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- Results -->
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Method</h2>
+        <!-- <h3 class="title is-4">Poisoned images</h3> -->
+        <div class="content has-text-justified">
+          <p>
+            We apply training-free guidance on a few generated frames during inference. However, extending to video diffusion models is <strong>non-trivial</strong> due to 
+            <br>(1) Challenge in handling 3D-VAE (CausalVAE) latent space and <strong>Out-of-Memory (OOM)</strong> issue in video decoding, and 
+            <br>(2) Existing <strong>optimization method</strong> from T2I are not well-suited for video generation.
+          </p>
+        </div>
+
+        <h3 class="title is-4">Latent Slicing for OOM Issue</h3>
+        <style>
+          #latent-slicing-carousel .carousel-item img {
+            padding: 14px;
+            box-sizing: border-box;
+          }
+        </style>
+        <div id="latent-slicing-carousel" class="carousel" style="margin-bottom: 30px; overflow: hidden;">
+          <div class="carousel-item" style="display: flex; justify-content: center;">
+            <img src="figure/methods/slicing1.jpg" alt="slicing1" width="100%" height="100%">
+          </div>
+          <div class="carousel-item" style="display: flex; justify-content: center;">
+            <img src="figure/methods/slicing2.jpg" alt="slicing2" width="100%" height="100%">
+          </div>
+        </div>
+
+
+        <h3 class="title is-4">Video Latent Optimization (VLO)</h3>
+        <style>
+          #vlo-carousel .carousel-item img {
+            padding: 10px;
+            box-sizing: border-box;
+          }
+        </style>
+        <div id="vlo-carousel" class="carousel" style="margin-bottom: 30px; overflow: hidden;">
+          <div class="carousel-item" style="display: flex; justify-content: center;">
+            <img src="figure/methods/vlo1.jpg" alt="vlo1" width="100%" height="100%">
+          </div>
+          <div class="carousel-item" style="display: flex; justify-content: center;">
+            <img src="figure/methods/vlo2.jpg" alt="vlo2" width="100%" height="100%">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{jang2025frameguidance,
+        title={Frame Guidance: Training-Free Guidance for Frame-Level Control in Video Diffusion Models}, 
+        author={Sangwon Jang and Taekyung Ki and Jaehyeong Jo and Jaehong Yoon and Soo Ye Kim and Zhe Lin and Sung Ju Hwang},
+        journal={arXiv preprint arXiv:2506.07177},
+        year={2025},
+  }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
